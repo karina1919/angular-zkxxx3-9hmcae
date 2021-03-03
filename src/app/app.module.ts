@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -15,12 +15,28 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 
 import {ShareButtonsModule} from 'ngx-sharebuttons/buttons'
-import {ShareIconsModule} from 'ngx-sharebuttons/icons'
+import {ShareIconsModule} from 'ngx-sharebuttons/icons';
+import { SkincareComponent } from './skincare/skincare.component';
+import { HaircareComponent } from './haircare/haircare.component';
+import { PerfumeComponent } from './perfume/perfume.component';
+import { CosmeticsComponent } from './cosmetics/cosmetics.component';
+import { LikeComponent } from './like/like.component';
+import { DeleteComponent } from './delete/delete.component';
+
+
+const appRoutes: Routes = [
+  {path: '', component: ProductListComponent},
+  {path: 'skincare', component: SkincareComponent},
+  {path: 'haircare', component: HaircareComponent},
+  {path: 'perfume', component: PerfumeComponent},
+  {path: 'cosmetics', component: CosmeticsComponent}
+]
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
     ShareButtonsModule.withConfig({
     debug:true,
     }),
@@ -40,7 +56,13 @@ import {ShareIconsModule} from 'ngx-sharebuttons/icons'
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    SkincareComponent,
+    HaircareComponent,
+    PerfumeComponent,
+    CosmeticsComponent,
+    LikeComponent,
+    DeleteComponent
   ],
   bootstrap: [
     AppComponent

@@ -23,11 +23,12 @@
   <a href={{product.source}}>
     Go to Amazon
   </a>
-
   <button (click)="share()">
   Share
   </button>
-
+  <button (click)="removeProducts(productList)">
+  Delete
+  </button>
 <app-product-alerts
   [product]="product" 
   (notify)="onNotify()">

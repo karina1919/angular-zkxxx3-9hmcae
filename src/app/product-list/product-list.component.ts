@@ -17,6 +17,18 @@ export class ProductListComponent {
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
   }
+    removeProducts(productList) {
+    let index = this.products.indexOf(productList);
+    if (index !== -1){
+      this.products.splice(index,1);
+    }
+  }
+  // removeProducts(id) {
+  //   let index = this.products.findIndex( e => e.id === id);
+  //   if (index !== -1){
+  //     this.products.splice(index,1);
+  //   }
+  // }
 }
 
 

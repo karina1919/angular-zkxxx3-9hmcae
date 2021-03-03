@@ -13,6 +13,10 @@ export class ProductDetailsComponent implements OnInit {
     this.cartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
+    numberOfLikes : number = 0;
+    likeButtonClick() {
+    this.numberOfLikes++;
+}
   product;
   constructor(
     private route: ActivatedRoute,

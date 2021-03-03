@@ -8,10 +8,15 @@
   </div>
   <h4>{{product.rating}}</h4>
   <div>
-  <img src={{product.imagesource}} />
+  <img class = "image" src={{product.imagesource}} />
   </div>
-  <div>
-  <a>{{product.source}}</a>
+  <div class = "source">
+  <h3> Source: <br> <a>{{product.source}}</a> </h3>
   </div>
-  <button (click)="addToCart(product)">Buy</button>
+  <button class = "buy" (click)="addToCart(product)">Buy</button>
+
+<div class="likes">
+  <button (click)="likeButtonClick()">Like</button>
+  <p class = "num-of-likes">{{numberOfLikes}}</p>
+</div>
 </div>
